@@ -1,13 +1,12 @@
 import { PrismaClient } from '@prisma/client';
 
-// We fall back to the direct port 5432 string since it already bypasses the tenant formatting checks perfectly
-const ABSOLUTE_URL = "postgresql://postgres:Aghori12345%23%23@db.xusktvjxrehbkonqpltm.supabase.co:5432/postgres";
+const POOLER_NEON_URL = "postgresql://neondb_owner:npg_Ht4hcUT5gzvO@ep-morning-wind-ap1ranvc-pooler.c-7.us-east-1.aws.neon.tech:6543/neondb?sslmode=require&channel_binding=require";
 
 const prismaClientSingleton = () => {
   return new PrismaClient({
     datasources: {
       db: {
-        url: ABSOLUTE_URL,
+        url: POOLER_NEON_URL,
       },
     },
   });
