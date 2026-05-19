@@ -1,12 +1,11 @@
 import { PrismaClient } from '@prisma/client';
 
-const POOLER_NEON_URL = "postgresql://neondb_owner:npg_Ht4hcUT5gzvO@ep-morning-wind-ap1ranvc-pooler.c-7.us-east-1.aws.neon.tech:6543/neondb?sslmode=require&channel_binding=require";
-
+// Ab yeh kisi fixed link par depend nahi karega, seedha .env se dynamic data uthayega
 const prismaClientSingleton = () => {
   return new PrismaClient({
     datasources: {
       db: {
-        url: POOLER_NEON_URL,
+        url: process.env.DATABASE_URL,
       },
     },
   });

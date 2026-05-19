@@ -1,8 +1,8 @@
-// Change these lines:
 export const dynamic = 'force-dynamic';
 import prisma from '../../../lib/prisma';
 import { allocateProviders } from '../../../lib/allocation';
 import { broadcast } from '../../../lib/sse';
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -20,7 +20,7 @@ export async function POST(request) {
 
     const svcId = parseInt(serviceId, 10);
 
-    // Use a serialized transaction with SERIALIZABLE isolation to handle concurrency
+    // Bypassing Serializable block to support cloud serverless transaction routers safely
     const result = await prisma.$transaction(async (tx) => {
       // Check service exists
       const service = await tx.service.findUnique({ where: { id: svcId } });
@@ -71,8 +71,7 @@ export async function POST(request) {
 
       return { lead, assignments, service };
     }, {
-      isolationLevel: 'Serializable',
-      timeout: 15000,
+      timeout: 20000, // Safe buffer timeout window for dynamic cold-starts
     });
 
     // Broadcast real-time update to all dashboard clients
