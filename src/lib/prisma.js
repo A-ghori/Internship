@@ -1,13 +1,13 @@
 import { PrismaClient } from '@prisma/client';
 
-// We hardcode your active pooler connection string right here to bypass any Vercel cache bugs
-const SEED_URL = "postgresql://postgres.xusktvjxrehbkonqpltm:Aghori12345%23%23@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true";
+// We fall back to the direct port 5432 string since it already bypasses the tenant formatting checks perfectly
+const ABSOLUTE_URL = "postgresql://postgres:Aghori12345%23%23@db.xusktvjxrehbkonqpltm.supabase.co:5432/postgres";
 
 const prismaClientSingleton = () => {
   return new PrismaClient({
     datasources: {
       db: {
-        url: SEED_URL, 
+        url: ABSOLUTE_URL,
       },
     },
   });
