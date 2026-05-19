@@ -30,29 +30,6 @@
 
 ---
 
-## Part 3: Presentation (Markdown Structure for Interview/Pitch)
-
-Agar woh tumse interview ya assignment panel mein is project ki presentation maangein, toh tum is structure ka use kar sakte ho. Yeh tumhari strong command ko setup karta hai:
-
-### Slide 1: Title & Overview
-*   **Heading:** Next-Gen Mini Lead Distribution System
-*   **Sub-heading:** Scalable, Concurrent, and Fair Round-Robin Allocation Framework
-*   **Presented By:** Shubhayu Barua
-*   **Core Stack:** Next.js (App Router), Prisma ORM, Cloud PostgreSQL (Railway Engine), Tailwind CSS, Server-Sent Events (SSE).
-
-### Slide 2: The Core Problem & Solution
-*   **The Challenge:** Distributing user leads to service providers fairly, avoiding duplicate entries, handling simultaneous concurrent traffic spikes, and maintaining sub-second updates.
-*   **The Architecture:** Built with an "Inventor-style" mindset—bypassing heavy abstraction layers to achieve low latency, absolute atomicity, and high availability.
-
-### Slide 3: Algorithmic Fairness & Dynamic Real-time Engine
-*   **Round-Robin Logic:** Complete separation of concerns. State vectors track distribution indexes dynamically per service type.
-*   **Real-time Push Updates:** Integrated Server-Sent Events (SSE) to broadcast assignments instantly to the monitor dashboards without wasteful polling operations.
-
-### Slide 4: Concurrency & Idempotency Engineering
-*   **Race Conditions Blocked:** Atomic operations on the database cluster prevent double-allocations during high-velocity parallel requests.
-*   **Idempotency Engine:** `phone_serviceId` composite unique indexes completely protect the backend from double-processing network duplicate faults.
-
-
 SOME IMPORTANT DEFINATIONS
 
 1. Allocation Algorithm (The Fair Playground Rule)
