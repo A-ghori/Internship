@@ -30,7 +30,7 @@
 
 ---
 
-## 📊 Part 3: Presentation (Markdown Structure for Interview/Pitch)
+## Part 3: Presentation (Markdown Structure for Interview/Pitch)
 
 Agar woh tumse interview ya assignment panel mein is project ki presentation maangein, toh tum is structure ka use kar sakte ho. Yeh tumhari strong command ko setup karta hai:
 
