@@ -1,4 +1,5 @@
 // Change these lines:
+export const dynamic = 'force-dynamic';
 import { prisma } from '../../../lib/prisma';
 import { allocateProviders } from '../../../lib/allocation';
 import { broadcast } from '../../../lib/sse';
