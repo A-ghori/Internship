@@ -1,4 +1,4 @@
-import { prisma } from '../../../lib/prisma';
+import  prisma  from '../../../lib/prisma';
 import { allocateProviders } from '../../../lib/allocation';
 import { broadcast } from '../../../lib/sse';
 
